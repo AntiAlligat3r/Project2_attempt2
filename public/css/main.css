@@ -1,24 +1,28 @@
-ul {
+.navBar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
   }
-  
-  li {
+  .login {
+    float: right;
+  }
+  .navBarButtons {
     float: left;
   }
   
-  li a {
+  a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
-  
+  .login {
+    float: right;
+  }
   /* Change the link color to #111 (black) on hover */
-  li a:hover {
+  a:hover {
     background-color: #111;
   }
