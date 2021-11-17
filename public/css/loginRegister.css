@@ -1,0 +1,56 @@
+#login{
+    border-radius: .1rem;
+    border:none;
+    margin-top: 0.3rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    background-color: bisque;
+}
+#login:hover{
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(97, 221, 215,0.5);
+    transform: translateY(-0.2rem) translateX(-.1rem);
+    border-radius: .6rem;
+    transition: 100ms;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-image: url("../img/IMG_38051.jfif");
+    background-repeat: no-repeat;
+    
+    background-size:cover;
+}
+
+.form{
+    background-color: rgba(180, 135, 67, 0.733);
+    border-radius: 5%;
+    padding: 1rem 1rem 1rem 1rem;
+}
+.textBoxes{
+    margin-bottom: .2rem;
+}
+label{
+    display: inline-block;
+    width: 5rem;
+    text-align: right;
+}
