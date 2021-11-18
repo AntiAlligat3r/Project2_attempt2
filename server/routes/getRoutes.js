@@ -10,5 +10,8 @@ router.get('/',(req,res) =>{
 router.get('/login',(req,res) =>{
     res.render('login',{layout: 'logReg'});
 });
+router.get('/register',(req,res) =>{
+    res.render('registration',{layout: 'logReg'});
+});
 
 module.exports = router;

@@ -1,56 +1,63 @@
-#login{
-    border-radius: .1rem;
+#register{
+    border-radius: .2rem;
     border:none;
     margin-top: 0.3rem;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin-top: 1rem;
     background-color: bisque;
 }
-#login:hover{
+#register:hover{
     box-shadow: 0 0.4rem 1.4rem 0 rgba(97, 221, 215,0.5);
     transform: translateY(-0.2rem) translateX(-.1rem);
     border-radius: .6rem;
+    
     transition: 100ms;
 }
-
 .flex-column{
     display: flex;
     flex-direction: column;
 }
-
 .flex-center{
     justify-content: center;
     align-items: center;
 }
-
 .justify-center{
     justify-content: center;
 }
-
 .container{
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 2rem;
-    background-image: url("../img/IMG_38051.jfif");
+    background-image: url("../img/IMG_4179.JPG");
     background-repeat: no-repeat;
-    
     background-size:cover;
 }
-
 .form{
-    background-color: rgba(180, 135, 67, 0.733);
+    background-color: rgba(51, 80, 92, 0.507);
     border-radius: 5%;
     padding: 1rem 1rem 1rem 1rem;
 }
 .textBoxes{
     margin-bottom: .2rem;
+    margin-right: .5rem;
+    margin-top: .2rem;
 }
 label{
     display: inline-block;
-    width: 5rem;
+    width: 10rem;
     text-align: right;
 }
+.inputBody{
+    background-color: rgba(184, 152, 104, 0.699);
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+}
+.header{
+    background-color: rgba(184, 152, 104, 0.699);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
