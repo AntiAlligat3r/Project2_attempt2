@@ -13,6 +13,38 @@
     
     transition: 100ms;
 }
+#login{
+    border-radius: .2rem;
+    border:none;
+    margin-top: 0.3rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin-top: 1rem;
+    background-color: bisque;
+}
+#login:hover{
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(97, 221, 215,0.5);
+    transform: translateY(-0.2rem) translateX(-.1rem);
+    border-radius: .6rem;
+    
+    transition: 100ms;
+}
+#logregister{
+    border-radius: .2rem;
+    border:none;
+    margin-top: 0.3rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    background-color: bisque;
+    color: black;
+}
+#logregister:hover{
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(97, 221, 215,0.5);
+    transform: translateY(-0.2rem) translateX(-.1rem);
+    border-radius: .6rem;
+    
+    transition: 100ms;
+}
 .flex-column{
     display: flex;
     flex-direction: column;

@@ -1,21 +1,24 @@
 <div class="container">
-    <form action="/" method="post" class="form flex-column flex-center">
-        <div class="header">
-            <h1>Login</h1>
-        </div>
-        <div>
-            <div>
-                <label for="email">email:</label>
-                <input type="text" name="email" id="email" class="textBoxes">
-                <small class="smallEmail"></small>  
-            </div>      
-            <div>
-                <label for="email">password:</label>
-                <input type="password" name="password" id="password" class="textBoxes">
-                <small class="smallPassword"></small>
+    <form action="/home" method="post" class="form flex-column flex-center">
+        <div class="formBody">
+            <div class="header flex-center flex-column">
+                <h1>Login</h1>
+            </div>
+            <div class="inputBody">
+                <div>
+                    <label for="email">email:</label>
+                    <input type="text" name="email" id="email" class="textBoxes">
+                    <small class="smallEmail"></small>  
+                </div>      
+                <div>
+                    <label for="email">password:</label>
+                    <input type="password" name="password" id="password" class="textBoxes">
+                    <small class="smallPassword"></small>
+                </div>
             </div>
         </div>
-        <input type="button" name="login" id="login" value="Login">
-        <a href="/register">Register</a>
+        
+        <button type="submit" name="login" id="login">Login</button>
+        <a href="/register" id="logregister">Register</a>
     </form>
 </div>
