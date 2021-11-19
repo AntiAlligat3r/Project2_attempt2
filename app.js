@@ -2,7 +2,8 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const bodyPaser = require('body-parser');
 const mysql = require('mysql');
-const routes =require('./server/routes/getRoutes');
+const getRoutes =require('./server/routes/getRoutes');
+const postRoutes =require('./server/routes/postRoutes');
 
 const app = express();
 
@@ -13,8 +14,9 @@ const port = process.env.PORT || 3000||3001;
 //pasring middleware
 //parse application/x-www-form-urlencoded
 
-app.use(bodyPaser.urlencoded({extended:false}));
+app.use(bodyPaser.urlencoded({extended:true}));
 app.use(bodyPaser.json());
+
 
 //static files
 app.use(express.static('./public'));
@@ -39,6 +41,7 @@ db.getConnection((err,connection)=>{
     console.log(`connected as ID ${connection.threadId}`);
 });
 
-app.use('/',routes);
+app.use('/',getRoutes);
+app.use('/login-form',postRoutes);
 
 app.listen(port, ()=>console.log(`listening on port ${port}`));
