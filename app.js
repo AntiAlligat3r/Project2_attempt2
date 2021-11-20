@@ -2,8 +2,8 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const bodyPaser = require('body-parser');
 const mysql = require('mysql');
-const getRoutes =require('./server/routes/getRoutes');
-const postRoutes =require('./server/routes/postRoutes');
+const getRoutes =require('./server/routes/getRoutes.js');
+const postRoutes =require('./server/routes/postRoutes.js');
 
 const app = express();
 
@@ -42,6 +42,5 @@ db.getConnection((err,connection)=>{
 });
 
 app.use('/',getRoutes);
-app.use('/login-form',postRoutes);
-
+app.use('/',postRoutes);
 app.listen(port, ()=>console.log(`listening on port ${port}`));
