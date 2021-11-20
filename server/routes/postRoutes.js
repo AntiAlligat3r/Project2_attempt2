@@ -6,11 +6,9 @@ const router = express();
 router.use(bodyPaser.urlencoded({extended:true}));
 router.use(bodyPaser.json());
 
+router.post('/register',(req,res) =>{
+   // res.render('registration',{layout: 'logReg'});
+});
 
-router.post('/home',(req,res)=>
-{
-    console.log(req.body.email);
-    res.redirect('/');
-})
 
 module.exports = router;
