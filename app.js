@@ -18,4 +18,5 @@ app.set('view engine', '.hbs');
 
 app.use('/',getRoutes);
 app.use('/',postRoutes);
+
 app.listen(port, ()=>console.log(`listening on port ${port}`));

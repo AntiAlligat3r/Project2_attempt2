@@ -5,9 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/main.css" rel="stylesheet">
-    <title>Home</title>
+    
 </head>
 <body>
+    <ul class="navBar">
+        
+        <li class="Home"><a href="/">PhotoMania</a></li>
+        <li class="navBarButtons"><a href="/about">About</a></li>
+        <li class="login"><a href="/login">Login</a></li>
+        {{#each _loginDetails}}
+        <li class="login"><a href="/Profile">{{this.username}}tt</a></li>
+        {{/each}}
+    </ul>
     {{{body}}}
 </body>
 </html>
