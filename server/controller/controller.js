@@ -1,5 +1,6 @@
 
 require('dotenv').config();
+const crypto = require('crypto-js')
 const mysql = require('mysql');
 
 const db = mysql.createPool({
@@ -16,7 +17,8 @@ exports.loginInfo = (req,res) =>{
         if(err) throw err; //not connecting
 
         let _email = req.body.email;
-        let _password = req.body.password;
+        let _password = JSON.stringify(crypto.SHA256(req.body.password).words);
+
         console.log(`connected as ID ${connection.threadId}`);
         console.log(_email+" "+_password);
         
@@ -44,7 +46,9 @@ exports.RegisterInfo = (req,res) =>{
 
         let _username = req.body.username;
         let _email = req.body.email;
-        let _password = req.body.password;
+        let _password = JSON.stringify(crypto.SHA256(req.body.password).words);
+
+        
         console.log(`connected as ID ${connection.threadId}`);
         console.log(_email+" "+_password);
         

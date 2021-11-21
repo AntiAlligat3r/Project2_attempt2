@@ -56,17 +56,6 @@
 .justify-center{
     justify-content: center;
 }
-.container{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../img/IMG_4179.JPG");
-    background-repeat: no-repeat;
-    background-size:cover;
-}
 .form{
     background-color: rgba(51, 80, 92, 0.507);
     border-radius: 5%;
