@@ -26,8 +26,21 @@
                     <small class="smallConfPassword"></small>
                 </div>
             </div>
+            <div class="footer flex-center flex-column">
+                <div class ="valBody" hidden = true>
+                    <p id="valemail" class="invalconditions" hidden = true>Please enter a valid email</p>
+                    <p id="valpass" class="invalconditions" hidden = true>Passwords don't match</p>
+                </div>
+                <h3>Password must contain the following:</h3>
+                <div class ="conBody">
+                    <p id="letter" class="conditions">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="conditions">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="conditions">A <b>number</b></p>
+                    <p id="passlength" class="conditions">Minimum <b>8 characters</b></p>
+                </div>
+            </div>
         </div>
         <input type="button" name="register" id="register" value="Register">
     </form>
 </div>
-<script src="../public/js/registerCheck.js"></script>
+<script src="../js/registerCheck.js"></script>

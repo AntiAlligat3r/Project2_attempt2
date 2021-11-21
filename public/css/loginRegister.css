@@ -92,4 +92,49 @@ label{
     margin-bottom: 1rem;
     border-radius: 0.5rem;
 }
+.footer{
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgba(184, 152, 104, 0.699);
+}
+.conBody{
+    background-color: rgba(184, 179, 169, 0.795);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.conditions{
+    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+    color: red;
+}
+.conditions:before {
+    position: relative;
+    left: -10px;
+    content: "\d7";
+}
+.validconditions {
+    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+    color: green;
+}
+.validconditions:before {
+    position: relative;
+    left: -10px;
+    content: "\2713";
+}
+
+.valBody{
+    color: rgba(255, 0, 0, 0);
+   /* background-color: rgba(184, 179, 169, 0.795);*/
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+}
+
+.invalconditions {
+    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+    color: rgba(255, 0, 0, 0.897);
+}
+
+
 
