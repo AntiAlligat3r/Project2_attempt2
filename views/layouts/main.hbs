@@ -11,13 +11,14 @@
     <ul class="navBar">
         <li class="navBarButtons"><a href="/about">About</a></li>
         <li class="Home"><a href="/">PhotoRealm</a></li>
-        {{#if}}
+        
             <li class="login"><a href="/login">Logout</a></li>
             <li class="login" id="profile"><a href="/profile">Profile{{this.username}}</a></li>
-        {{#else}}
+       <!-- {{#if}}
+           {{#else}}
             <li class="login"><a href="/login">Login</a></li>
             <li class="login" id="profile"><a href="/profile">Profile{{this.username}}</a></li>
-        {{/if}}
+        {{/if}}-->
     </ul>
     {{{body}}}
 </body>
