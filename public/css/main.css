@@ -31,3 +31,23 @@
     color: white;
     float: left;
   }
+  .background{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 0 0 0;
+    background-image: url("../img/IMG_4179.JPG");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+.justify-center{
+    justify-content: center;
+}
