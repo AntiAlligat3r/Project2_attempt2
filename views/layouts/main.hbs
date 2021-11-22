@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/main.css" rel="stylesheet">
-    
+    <link href="./css/profile.css" rel="stylesheet">
 </head>
 <body class="background">
     <ul class="navBar">
-        
-        <li class="Home"><a href="/">PhotoRealm</a></li>
         <li class="navBarButtons"><a href="/about">About</a></li>
-        <li class="login"><a href="/login">Login</a></li>
-        {{#each _loginDetails}}
-        <li class="login"><a href="/profile">{{this.username}}</a></li>
-        {{/each}}
+        <li class="Home"><a href="/">PhotoRealm</a></li>
+        {{#if}}
+            <li class="login"><a href="/login">Logout</a></li>
+            <li class="login" id="profile"><a href="/profile">Profile{{this.username}}</a></li>
+        {{#else}}
+            <li class="login"><a href="/login">Login</a></li>
+            <li class="login" id="profile"><a href="/profile">Profile{{this.username}}</a></li>
+        {{/if}}
     </ul>
     {{{body}}}
 </body>

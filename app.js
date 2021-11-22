@@ -4,6 +4,11 @@ const getRoutes =require('./server/routes/getRoutes.js');
 const postRoutes =require('./server/routes/postRoutes.js');
 const postUploadRoute =require('./server/routes/postUploadRoute.js');
 
+/*PORT = 5000
+DB_HOST = eu-cdbr-west-01.cleardb.com
+DB_NAME = heroku_3c475a41c7fb417
+DB_USER = b3c9671d2fd611
+DB_pass = 453f47e7*/
 const app = express();
 
 require('dotenv').config();

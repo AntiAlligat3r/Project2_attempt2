@@ -1,0 +1,30 @@
+.form{
+    background-color: rgba(51, 80, 92, 0.507);
+    border-radius: 5%;
+    padding: 1rem 1rem 1rem 1rem;
+}
+.profileBlock{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.text-align{
+    text-align: center;
+}
+.header{
+    background-color: rgba(184, 152, 104, 0.699);
+    border-radius: 5%;
+    
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.column{
+    background-color: rgba(184, 152, 104, 0.699);
+    border-radius: 5%;
+    padding: 1rem 1rem 1rem 1rem;
+}
+.heading-column{
+    margin-top: 0;
+}

@@ -124,6 +124,9 @@ label{
     margin: 0.2rem 0.2rem 0.2rem 0.2rem;
     color: rgba(255, 0, 0, 0.897);
 }
+html{
+    font-family:Arial, Helvetica, sans-serif;
+}
 
 
 

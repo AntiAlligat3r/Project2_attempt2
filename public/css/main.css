@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.836);
   }
   .login {
     float: right;
@@ -22,6 +22,7 @@
   .login {
     float: right;
   }
+  
   /* Change the link color to #111 (black) on hover */
   a:hover {
     background-color: #111;
@@ -29,14 +30,14 @@
 
   .Home{
     color: white;
-    float: left;
+    float:left;
   }
   .background{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     margin: 0 0 0 0;
-    background-image: url("../img/IMG_4179.JPG");
+    background-image: url("../img/IMG_2708.JPG");
     background-repeat: no-repeat;
     background-size:cover;
 }
@@ -50,4 +51,8 @@
 }
 .justify-center{
     justify-content: center;
+}
+
+html{
+  font-family:Arial, Helvetica, sans-serif;
 }
