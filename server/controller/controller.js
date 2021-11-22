@@ -2,7 +2,7 @@
 require('dotenv').config();
 const crypto = require('crypto-js')
 const mysql = require('mysql');
-const Handlebars = require('express-handlebars')
+const createPhotoElement = require('../../public/js/createPhotoElement.js');
 const db = mysql.createPool({
     connectionLimit : 100,
     host            : process.env.DB_HOST,
@@ -10,10 +10,17 @@ const db = mysql.createPool({
     password        : process.env.DB_PASS,
     database        : process.env.DB_NAME,
 });
-let {userId ,username} ='';
+
+let {userId ,username,num,imgName} ='';
 
 exports.getUsername = () =>{
     return username;
+}
+exports.getNum =()=>{
+    return num;
+}
+exports.getImgName=()=>{
+    return imgName;
 }
 
 
@@ -66,6 +73,7 @@ exports.RegisterInfo = (req,res) =>{
 }
 
 exports.UploadPhoto = (req,res)=>{
+    
     let sampleFile;
     let uploadPath;
 
@@ -86,13 +94,30 @@ exports.UploadPhoto = (req,res)=>{
         db.getConnection((err,connection)=>{
             if(err) throw err; //not connecting
     
-            let _picName = sampleFile.name;
+            imgName = sampleFile.name;
             console.log(userId);
-            connection.query('INSERT INTO pictures(pictures_name, users_id) VALUES (?,?);',[_picName,userId],(err,_pictureDetails) =>{
+            connection.query('INSERT INTO pictures(pictures_name, users_id) VALUES (?,?);',[imgName,userId],(err,_pictureDetails) =>{
+                 
+                if(!err)
+                {
+                }
+                else
+                    console.log(err);
+            });
+            connection.query('SELECT pictures_name FROM pictures WHERE users_id = ?;',[userId],(err,_totalPictures) =>{
                 connection.release();
                 
                 if(!err)
-                    res.redirect('profile');
+                    if(_totalPictures.length == 0)
+                        console.log('no pictures registered to this user');
+                    else
+                    {
+                        num = _totalPictures.length;
+                        userId = _totalPictures[0]["users_id"];
+                        
+                        res.redirect('profile');
+                    }
+                        
                 else
                     console.log(err);
             });

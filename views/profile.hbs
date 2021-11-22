@@ -1,14 +1,47 @@
 <div class="profileBlock">
-        <form action="/upload" method ='POST' enctype="multipart/form-data" class="form flex-column flex-center">
+    <form action="/upload" method ='POST' enctype="multipart/form-data" class="form flex-column flex-center">         
+        <div class="header text-align">
+            <h1>{{username}}</h1>
+            <label>number of photo's</label>
+            <label class="inline" id="numOfPhotos">{{num}}</label>
+        </div>
+        <div class="column">
+            <h2 class ="text-align heading-column">upload image</h2>
+            <input type="file" name="img" id="img" accept="image/*">
+            <input type="submit" value="submit">
+        </div>
+    </form>
+        <button onclick="test()" id="sub"> Show photos</button>
+    <div id='imgName' hidden='true'>{{imgName}}</div> 
+</div>
+<div class="images" id="class">
+    <script>
+        const pos = document.getElementById('sub');
+        pos.onclick = () =>{test}
+    test = () =>{
+        const numOfPhoto = document.getElementById('numOfPhotos').innerHTML;
+            num = parseInt(numOfPhoto.value)
+            const imgName=document.getElementById('imgName');
+            const image=document.getElementById('images');
+            var gallery = document.createElement('div');
+            var anchor = document.createElement('a');
+            var img = new Image();
             
-            <div class="header text-align">
-                <h1>{{username}}</h1>
-            </div>
-            <div class="column">
-                <h2 class ="text-align heading-column">upload image</h2>
-                <input type="file" name="img" id="img" accept="image/*">
-                <input type="submit" value="submit">
-            </div>
-        </form>
-    
+            gallery.className = "gallery";
+
+            anchor.target = "_blank";
+            anchor.href = "../../server/uploads/"+imgName;
+
+            img.src = '../../server/uploads/'+imgName;
+            img.alt = imgName;
+            img.width = "600";
+            img.height ="400";
+
+            
+            document.gallery.appendChild(anchor);
+            document.anchor.appendChild(img);
+
+            document.body.insertBefore(gallery, image);
+    }    
+    </script>
 </div>
