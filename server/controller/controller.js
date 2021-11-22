@@ -2,7 +2,7 @@
 require('dotenv').config();
 const crypto = require('crypto-js')
 const mysql = require('mysql');
-
+const Handlebars = require('express-handlebars')
 const db = mysql.createPool({
     connectionLimit : 100,
     host            : process.env.DB_HOST,
@@ -10,6 +10,11 @@ const db = mysql.createPool({
     password        : process.env.DB_PASS,
     database        : process.env.DB_NAME,
 });
+
+/*Handlebars.registerHelper('login', function(string) {
+    return string;
+ });*/
+
 
 exports.loginInfo = (req,res) =>{
     
@@ -27,7 +32,8 @@ exports.loginInfo = (req,res) =>{
                     console.log('no user registered to this login details');
                 else
                 {
-                    res.render('home',{_loginDetails});
+                    const _username = _loginDetails[0]["users_username"];
+                    res.render('home',{_username});
                 }
                     
             else
