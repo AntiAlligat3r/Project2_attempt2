@@ -11,9 +11,9 @@
     <ul class="navBar">
         <li class="navBarButtons"><a href="/about">About</a></li>
         <li class="Home"><a href="/">PhotoRealm</a></li>
-        {{#if _username}}
+        {{#if username}}
             <li class="login"><a href="/">Logout</a></li>
-            <li class="login" id="profile"><a href="/profile">{{_username}}</a></li>
+            <li class="login" id="profile"><a href="/profile">{{username}}</a></li>
        {{else}}
             <li class="login"><a href="/login">Login</a></li>
             <li class="login" id="profile" hidden = true><a href="/profile">Profile</a></li>

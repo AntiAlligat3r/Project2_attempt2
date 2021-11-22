@@ -10,10 +10,11 @@ const db = mysql.createPool({
     password        : process.env.DB_PASS,
     database        : process.env.DB_NAME,
 });
+let {userId ,username} ='';
 
-/*Handlebars.registerHelper('login', function(string) {
-    return string;
- });*/
+exports.getUsername = () =>{
+    return username;
+}
 
 
 exports.loginInfo = (req,res) =>{
@@ -32,8 +33,10 @@ exports.loginInfo = (req,res) =>{
                     console.log('no user registered to this login details');
                 else
                 {
-                    const _username = _loginDetails[0]["users_username"];
-                    res.render('home',{_username});
+                    userId = _loginDetails[0]["users_id"];
+                    username = _loginDetails[0]["users_username"];
+                    console.log(userId+" "+username);
+                    res.render('home',{username});
                 }
                     
             else
@@ -60,6 +63,39 @@ exports.RegisterInfo = (req,res) =>{
                 console.log(err);
         });
     });
+}
 
+exports.UploadPhoto = (req,res)=>{
+    let sampleFile;
+    let uploadPath;
 
+    if(!req.files||Object.keys(req.files).length == 0)
+        return res.status(400).send('no files were uploaded');
+
+    sampleFile = req.files.img;
+
+    console.log(sampleFile);
+    uploadPath = './server/uploads/'+sampleFile.name;
+
+    //use mv() to place photo in server
+
+    sampleFile.mv(uploadPath , (err)=>{
+        if(err) return res.status(500).send(err)
+
+        //add photo name to DB with current username
+        db.getConnection((err,connection)=>{
+            if(err) throw err; //not connecting
+    
+            let _picName = sampleFile.name;
+            console.log(userId);
+            connection.query('INSERT INTO pictures(pictures_name, users_id) VALUES (?,?);',[_picName,userId],(err,_pictureDetails) =>{
+                connection.release();
+                
+                if(!err)
+                    res.redirect('profile');
+                else
+                    console.log(err);
+            });
+        });
+    });
 }
