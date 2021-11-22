@@ -2,6 +2,7 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const getRoutes =require('./server/routes/getRoutes.js');
 const postRoutes =require('./server/routes/postRoutes.js');
+const postUploadRoute =require('./server/routes/postUploadRoute.js');
 
 const app = express();
 
@@ -18,5 +19,6 @@ app.set('view engine', '.hbs');
 
 app.use('/',getRoutes);
 app.use('/',postRoutes);
+app.use('/',postUploadRoute);
 
 app.listen(port, ()=>console.log(`listening on port ${port}`));

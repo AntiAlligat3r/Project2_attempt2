@@ -18,9 +18,6 @@ exports.loginInfo = (req,res) =>{
 
         let _email = req.body.email;
         let _password = JSON.stringify(crypto.SHA256(req.body.password).words);
-
-        console.log(`connected as ID ${connection.threadId}`);
-        console.log(_email+" "+_password);
         
         connection.query('SELECT * FROM users WHERE users_email = ? AND users_password = ?;',[_email,_password],(err,_loginDetails) =>{
             connection.release();
@@ -47,10 +44,6 @@ exports.RegisterInfo = (req,res) =>{
         let _username = req.body.username;
         let _email = req.body.email;
         let _password = JSON.stringify(crypto.SHA256(req.body.password).words);
-
-        
-        console.log(`connected as ID ${connection.threadId}`);
-        console.log(_email+" "+_password);
         
         connection.query('INSERT INTO users(users_username, users_email, users_password) VALUES (?,?,?);',[_username,_email,_password],(err,_loginDetails) =>{
             connection.release();
@@ -64,4 +57,3 @@ exports.RegisterInfo = (req,res) =>{
 
 
 }
-//const sqlInsert = "INSERT INTO users (users_username, users_email, users_password) VALUES ("+username+","+email+","+password+");";
