@@ -42,7 +42,7 @@ exports.loginInfo = (req,res) =>{
                 {
                     userId = _loginDetails[0]["users_id"];
                     username = _loginDetails[0]["users_username"];
-                    console.log(userId+" "+username);
+                    
                     res.render('home',{username});
                 }
                     
@@ -82,7 +82,7 @@ exports.UploadPhoto = (req,res)=>{
 
     sampleFile = req.files.img;
 
-    console.log(sampleFile);
+    
     uploadPath = './server/uploads/'+sampleFile.name;
 
     //use mv() to place photo in server
